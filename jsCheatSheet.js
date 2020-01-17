@@ -66,6 +66,12 @@ console.log("\tValue of myConstant\t", myConstant); // outputs { newObjectField:
     let explicitUndefined = undefined;
     console.log("\tValue of explicit undefined", explicitUndefined, "type of explicitUndefined", explicitUndefined);
 
+// null
+console.log("\n>>>>>>> Special Type: null");
+    let myNullVariable = null;
+    console.log("\tType of myNullVariable", myNullVariable);
+    // null is a useful type when it is advantageous to unassign a value from memory but retain the variable. 
+
 // NaN
     console.log("\n>>>>>>> Special Type: NaN");
     // NaN stands for Not A Number. NaN has a type of number
@@ -77,36 +83,6 @@ console.log("\tValue of myConstant\t", myConstant); // outputs { newObjectField:
     console.log("\tnotANumberString parses to ", parseInt(notANumberString), "type =", typeof parseInt(notANumberString));
     console.log("\texplicitNaN value:", explicitNaN, "explicitNaN type:", typeof explicitNaN);
     console.log("\tSquare root of -1?\t", Math.sqrt(-1));
-// Infinity and -Infinity
-console.log("\n>>>>>>> Special Type: Infinity & -Infinity");
-    const divideByZero = 42/0;
-    console.log("\tCan we divide by zero?", divideByZero);
-    console.log("\tCan we divide by zero if it's negative?", -divideByZero);
-    console.log("\tType of Infinity?", typeof divideByZero);
-    console.log("\tType of Infinity?", typeof -divideByZero);
-
-    // Fun Javascript quirk. The value of the divideByZero variable is Infinity, the type is number.
-    // However, wehen we run the typeof 1/0, it displays the type a little differently.
-    console.log("Let's get weird");
-    console.log("\ttypeof 1/0 is:", typeof 1/0, "<-- Whaaaaaaat?");
-    console.log("\ttypeof (1/0) is:", typeof (1/0), "<-- Whaaaaaaat X2?");
-    // This is a simple order of operations mixup. 
-    // When we run `typeof 1/0`, what is happening is JS evaluates the expression from left to right. 
-    // typeof is technically an operator and has higher precedence than the division operator. 
-    // But lower precedence than the parentheses operator. 
-    // So to trace typeof 1/0, JS is evaluating `typeof 1` first, which outputs the string 'number'
-    // Then, the string 'number' is divided by zero, and the string/number division results in NaN
-    // Neat, right? Let's prove it. 
-    let jsYouCrazy = typeof 1;
-    let soCrazy = jsYouCrazy/0;
-    console.log("\ttypeof 1 is:", jsYouCrazy, "\tand it has type of:", typeof jsYouCrazy);
-    console.log("\tdivided by a number", soCrazy);
-
-// null
-console.log("\n>>>>>>> Special Type: null");
-    let myNullVariable = null;
-    console.log("\tType of myNullVariable", myNullVariable);
-    // null is a useful type when it is advantageous to unassign a value from memory but retain the variable. 
 
 // Numbers in Javascript are all of type number (with the exception of a few special types covered later.)
 // The number type is a 64 bit double precision floating point number.
@@ -144,7 +120,7 @@ console.log("\n>>>>>>> Numbers & Math!");
     console.log("\tValues with < 6 decimal places output like this:", 0.000001, "or", 1e-6);
     console.log("\tValues with > 6 decimal places output like this:", 0.0000001);
 
-    console.log("OPERATORS!");
+    console.log("\n    OPERATORS!");
     let myOperatorVar;
     //Operators return their values after the operation is complete. 
     console.log("\t= is the assignment operator.", myOperatorVar = 42);
@@ -165,7 +141,78 @@ console.log("\n>>>>>>> Numbers & Math!");
     console.log("\t%= combined will perform modulus division and assign.", "original value:", myOperatorVar, "after %= operation:", myOperatorVar %= 5);
 
     // There are also operators for incrementing and decrementing variables. 
+    console.log("\n\tIncrementing and decrementing with ++ and --");
     let incrementVar = 0;
-    console.log("\n\tincrementVar++ will output the original value of incrementVar, then increment it.", incrementVar++);
+    console.log("\tincrementVar++ will output the original value of incrementVar, then increment it.", incrementVar++);
     console.log("\tPrinting the variable again will show its updated value.", incrementVar);
     console.log("\t++incrementVar will increment the value firts, then output the new value.", ++incrementVar);
+    
+    console.log("\n\tincrementVar-- will output the original value of incrementVar, then decrement it.", incrementVar--);
+    console.log("\tPrinting the variable again will show its updated value.", incrementVar);
+    console.log("\t--incrementVar will decrement the value first, then output the new value.", --incrementVar);
+
+    // Infinity and -Infinity
+    console.log("\n\tSpecial Values: Infinity & -Infinity");
+    const divideByZero = 42/0;
+    console.log("\tCan we divide by zero?", divideByZero);
+    console.log("\tCan we divide by zero if it's negative?", -divideByZero);
+    console.log("\tType of Infinity?", typeof divideByZero);
+    console.log("\tType of Infinity?", typeof -divideByZero);
+
+    // Fun Javascript quirk. The value of the divideByZero variable is Infinity, the type is number.
+    // However, wehen we run the typeof 1/0, it displays the type a little differently.
+    console.log("\n\tLet's get weird");
+    console.log("\ttypeof 1/0 is:", typeof 1/0, "<-- Whaaaaaaat?");
+    console.log("\ttypeof (1/0) is:", typeof (1/0), "<-- Whaaaaaaat X2?");
+    // This is a simple order of operations mixup. 
+    // When we run `typeof 1/0`, what is happening is JS evaluates the expression from left to right. 
+    // typeof is technically an operator and has higher precedence than the division operator. 
+    // But lower precedence than the parentheses operator. 
+    // So to trace typeof 1/0, JS is evaluating `typeof 1` first, which outputs the string 'number'
+    // Then, the string 'number' is divided by zero, and the string/number division results in NaN
+    // Neat, right? Let's prove it. 
+    let jsYouCrazy = typeof 1;
+    let soCrazy = jsYouCrazy/0;
+    console.log("\ttypeof 1 is:", jsYouCrazy, "\tand it has type of:", typeof jsYouCrazy);
+    console.log("\tdivided by a number", soCrazy);
+    
+    // Booleans & Truthyness/Falsyness
+    console.log("\n>>>>>>> Booleans, Truthyness, Comparisons, and Logical Operators!");
+    console.log("\tLiteral booleans just use the keywords true and false.", true, false, typeof true, typeof false);
+    console.log("\tValues can be compared with >, <, <=, >=");
+    console.log("\t1 > 0", 1 > 0);
+    console.log("\t1 < 0", 1 < 0);
+    console.log("\t1 >= 0", 1 >= 0);
+    console.log("\t1 <= 0", 1 <= 0);
+
+    console.log("\tComparisons can also be used on strings.");
+    console.log("\t'a' < 'b' resolves to", 'a' < 'b');
+    console.log("\t'a' > 'b' resolves to", 'a' > 'b');
+    console.log("\tThis is just an alphabetical order comparsion. Aardvark < Abstract evaluates", 'Aardvark' < 'Abstract');
+    console.log("\tIt is case sensitive however. 'a' > 'A' resolves", 'a' > 'A', "while 'a' < 'A' resolves", 'a' < 'A');
+    // https://javascript.info/comparison For mor info on how this works. 
+
+    console.log("\n\tThis is where it gets fun! Equality Comparisons have 2 operators. == and ===");
+    console.log("\tThe string '1' and the number 1 will reolsve true with '1' == 1", '1' == 1);
+    console.log("\tHowever, when we use ===, the strict equality operator, it resolves to false.");
+    console.log("\t'1' === 1 resolves to", '1' === 1);
+    console.log("\t== only compares the values, and will parse strings to numbers");
+    console.log("\t=== compares the values AND the type.");
+
+    console.log("\n\tWith that in mind, lets look at some falsy values. 0, '' (empty string), undefined, NaN, and null are all falsy values.");
+    console.log("\tAlthough they are not equal to false, certain JS comparisons evaluate them to false.\n");
+    // 0
+    if( 0 ) { console.log("\t0 evaluated true?"); } 
+    else { console.log("\t0 evaluated false! 0 == false evaluates to", 0 == false, "but 0 === false evaluates to", 0 === false); }
+    // ''
+    if( '' ) { console.log("\t'' evaluated true?"); } 
+    else { console.log("\t'' evaluated false! '' == false will evaluate to", '' == false, "but '' === false evaluates to", 0 === false); }
+    // undefined
+    if( undefined ) { console.log("\tundefined evaluated true?"); } 
+    else { console.log("\tundefined evaluated false! Even though undefined == false resolves to", undefined == false); }
+    // NaN
+    if( NaN ) { console.log("\tNaN evaluated true?"); } 
+    else { console.log("\tNaN evaluated false! Even though NaN == false resolves to", NaN == false); }
+    // null
+    if( null ) { console.log("\tnull evaluated true?"); } 
+    else { console.log("\tnull evaluated false! Even though null == false resolves to", null == false); }
