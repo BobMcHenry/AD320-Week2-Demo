@@ -33,13 +33,23 @@
 let myNum =42.50001;
 
 Math.round(myNum); // Output 43 - Traditional rounding
-Math.floor(myNum) // Output 42 - Basically trims decimals
-Math.ceil(myNum) // Output 43 - Always rounds up. 
+Math.floor(myNum); // Output 42 - Basically trims decimals
+Math.ceil(myNum); // Output 43 - Always rounds up. 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 
 // Strings
 
+let myString1 = "DOUBLE QUOTES";
+let myString2 = 'SINGLE QUOTES';
+let myString15= myString1 + " " + myString2;
+let myString3 = `BACKTICKS`;
+let myString3 = `BACKTICKS ${myString1}`;
+
+
+
 // Booleans/Truthy/Falsy
+
+
 
 // Arrays
 
