@@ -57,6 +57,9 @@ let myBool2 = false;
 
 
 // Arrays
+let myArr = [0,1,2,]
+myArr[0] // index 0, value 0
+myArr[10] = "Whhhat" // Trust me it works. 
 
 // Control Structures
 
