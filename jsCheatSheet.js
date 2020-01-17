@@ -1,15 +1,16 @@
-// Declare varaibles with var or let. Prefer let over var
 console.log(">>>>>>> VAR LET & CONST")
+    // Declare varaibles with var or let. Prefer let over var
     var myVar;
     let myLet;
+    // Variables are undefined if declared but not yet assigned a value.
+    console.log("\tValue of myVar before assignment", myVar);
+    console.log("\tValue of myLet before assignment", myLet);
 
-//Assign with the = (assignment operator)
+    //Assign with the = (assignment operator)
     myVar = 42;
     myLet = "42";
-
-// Use console.log to display console output. Similar to System.out.println() in Java
-console.log("\tValue of myVar", myVar);
-console.log("\tValue of myLet", myLet);
+    console.log("\tValue of myVar", myVar);
+    console.log("\tValue of myLet", myLet);
 
 // Declare and assign constants in the same expression.
     const myConstant = {}; //Initialized as empty object 
@@ -42,7 +43,8 @@ console.log("\tValue of myConstant\t", myConstant); // outputs { newObjectField:
 
     // unassigned variables
     let myUndefinedVariable;
-    console.log("\tValue of myUndefinedVariable\t", typeof myUndefinedVariable); // Outputs 'undefined'
+    console.log("\tValue of myUndefinedVariable\t", myUndefinedVariable); // Outputs 'undefined'
+    console.log("\tType of myUndefinedVariable\t", typeof myUndefinedVariable); // Outputs 'undefined'
 
     // Out of bounds array indices. 
     let myArray = ["Index 0"];
@@ -60,11 +62,11 @@ console.log("\tValue of myConstant\t", myConstant); // outputs { newObjectField:
         //This function does nothing;
     }
     let myUndefined2 = myFunction();
-    console.log("\tOutput of function with no return type\t", typeof myUndefined2); // Outputs 'undefined'
+    console.log("\tOutput of function with no return type\t", myUndefined2); // Outputs 'undefined'
 
     //undefined is also assignable, but doing this is not recommended. 
     let explicitUndefined = undefined;
-    console.log("\tValue of explicit undefined", explicitUndefined, "type of explicitUndefined", explicitUndefined);
+    console.log("\tValue of explicit undefined", explicitUndefined, "\n\ttype of explicitUndefined", explicitUndefined);
 
 // null
 console.log("\n>>>>>>> Special Type: null");
@@ -73,7 +75,7 @@ console.log("\n>>>>>>> Special Type: null");
     // null is a useful type when it is advantageous to unassign a value from memory but retain the variable. 
 
 // NaN
-    console.log("\n>>>>>>> Special Type: NaN");
+console.log("\n>>>>>>> Special Value: NaN");
     // NaN stands for Not A Number. NaN has a type of number
     // NaN can appear when a non numeric value is parsed
     let notANumberString = "I'm a string!";
@@ -83,6 +85,7 @@ console.log("\n>>>>>>> Special Type: null");
     console.log("\tnotANumberString parses to ", parseInt(notANumberString), "type =", typeof parseInt(notANumberString));
     console.log("\texplicitNaN value:", explicitNaN, "explicitNaN type:", typeof explicitNaN);
     console.log("\tSquare root of -1?\t", Math.sqrt(-1));
+    console.log("\taNumberString divided by notANumberString also gives us", aNumberString/notANumberString);
 
 // Numbers in Javascript are all of type number (with the exception of a few special types covered later.)
 // The number type is a 64 bit double precision floating point number.
@@ -174,10 +177,10 @@ console.log("\n>>>>>>> Numbers & Math!");
     let jsYouCrazy = typeof 1;
     let soCrazy = jsYouCrazy/0;
     console.log("\ttypeof 1 is:", jsYouCrazy, "\tand it has type of:", typeof jsYouCrazy);
-    console.log("\tdivided by a number", soCrazy);
+    console.log("\tdivided by a number resolves to", soCrazy);
     
-    // Booleans & Truthyness/Falsyness
-    console.log("\n>>>>>>> Booleans, Truthyness, Comparisons, and Logical Operators!");
+// Booleans & Truthyness/Falsyness
+console.log("\n>>>>>>> Booleans, Truthyness, Comparisons, and Logical Operators!");
     console.log("\tLiteral booleans just use the keywords true and false.", true, false, typeof true, typeof false);
     console.log("\tValues can be compared with >, <, <=, >=");
     console.log("\t1 > 0", 1 > 0);
@@ -198,8 +201,10 @@ console.log("\n>>>>>>> Numbers & Math!");
     console.log("\t'1' === 1 resolves to", '1' === 1);
     console.log("\t== only compares the values, and will parse strings to numbers");
     console.log("\t=== compares the values AND the type.");
+    console.log("\n\tBest practice is to ALWAYS use strict equality (===) for comparisons and cast values to the appropriate type as necessary.");
+    console.log("\tParsing a string of a number to a number type and comparing, such as parseInt('1') === 1 resolves to", parseInt('1') === 1);
 
-    console.log("\n\tWith that in mind, lets look at some falsy values. 0, '' (empty string), undefined, NaN, and null are all falsy values.");
+    console.log("\n\tNow lets look at some falsy values. 0, '' (empty string), undefined, NaN, and null are all falsy values.");
     console.log("\tAlthough they are not equal to false, certain JS comparisons evaluate them to false.\n");
     // 0
     if( 0 ) { console.log("\t0 evaluated true?"); } 
@@ -216,3 +221,46 @@ console.log("\n>>>>>>> Numbers & Math!");
     // null
     if( null ) { console.log("\tnull evaluated true?"); } 
     else { console.log("\tnull evaluated false! Even though null == false resolves to", null == false); }
+
+//Strings!
+console.log("\n>>>>>>> Strings and string operations");
+    let doubleQuotedString1 = "Double quoted string literal containing unescaped 'single quotes'";
+    let doubleQuotedString2 = "Double quoted string literal containing escaped \"double quotes\"";
+    let doubleQuotedString3 = "Double quoted string literal containing unescaped `backticks`";
+    console.log("\n\t", doubleQuotedString1); 
+    console.log("\t", doubleQuotedString2);
+    console.log("\t", doubleQuotedString3);
+
+    let singleQuotedString1 = 'Single quoted string literal containing unescaped "double quotes"';
+    let singleQuotedString2 = 'Single quoted string literal containing escaped \'single quotes\'';
+    let singleQuotedString3 = 'Single quoted string literal containing unescaped `backticks`';
+    console.log("\n\t", singleQuotedString1); 
+    console.log("\t", singleQuotedString2);
+    console.log("\t", singleQuotedString3);
+
+    let backtickQuotedString1 = `Backtick quoted string literal with unescaped "double quotes"`;
+    let backtickQuotedString2 = `Backtick quoted string literal with unescaped 'single quotes'`;
+    let backtickQuotedString3 = `Backtick quoted string literal with escaped \`backticks\``;
+    let backtickQuotedString4 = `Backtick quoted string literal with embedded variable ${myLet}`;
+    console.log("\n\t", backtickQuotedString1); 
+    console.log("\t", backtickQuotedString2);
+    console.log("\t", backtickQuotedString3);
+    console.log("\t", backtickQuotedString4);
+
+    let concatString = "+ String concatenation with double quotes, " + 'single quotes,' + ` and backticks`;
+    console.log("\n\t", concatString);
+
+    let addOnString = "Part 1";
+    addOnString += " and Part 2";
+    console.log("\t String conatenation with +=", addOnString);
+
+    let mySubstring = doubleQuotedString1.substring(0, 20);
+    console.log("\n\t Substring from position 0 to 20 of doubleQuotedString1 is", mySubstring);
+    console.log("\t", "'" + mySubstring + "'", "has a length of", mySubstring.length);
+    // String methods can also be applied directly to string literals. 
+    console.log("\n\t 'string'.toUpperCase() will capitalize all characters like so,", 'string'.toUpperCase());
+    console.log("\t 'STRING'.toLowerCase() will de-capitalize all characters like so,", 'STRING'.toLowerCase());
+
+    let myXMarkedString = "Where is the X at?";
+    console.log("\n\t The X character in the string", `'${myXMarkedString}' is at position`, myXMarkedString.indexOf('X'));
+    console.log("\t So I can use the charAt function to pull it out like so:", myXMarkedString.charAt(13));
