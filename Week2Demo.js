@@ -48,7 +48,12 @@ let myString3 = `BACKTICKS ${myString1}`;
 
 
 // Booleans/Truthy/Falsy
+let myBool = true;
+let myBool2 = false;
 
+// Falsy values - https://medium.com/coding-at-dawn/what-are-falsy-values-in-javascript-ca0faa34feb4
+// ! <- Not operator
+// !! Not Not operator - Used for clarity when doing boolean ops on nop boolean types
 
 
 // Arrays
