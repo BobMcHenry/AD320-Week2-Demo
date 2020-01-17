@@ -30,6 +30,12 @@
     var wayDownHere = "Whaaaaaat?";
 
 // Numbers & Math
+let myNum =42.50001;
+
+Math.round(myNum); // Output 43 - Traditional rounding
+Math.floor(myNum) // Output 42 - Basically trims decimals
+Math.ceil(myNum) // Output 43 - Always rounds up. 
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Math
 
 // Strings
 
