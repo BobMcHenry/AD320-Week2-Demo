@@ -264,3 +264,65 @@ console.log("\n>>>>>>> Strings and string operations");
     let myXMarkedString = "Where is the X at?";
     console.log("\n\t The X character in the string", `'${myXMarkedString}' is at position`, myXMarkedString.indexOf('X'));
     console.log("\t So I can use the charAt function to pull it out like so:", myXMarkedString.charAt(13));
+
+    //Arrays
+    console.log("\n>>>>>>> Arrays and array operations");
+    // Define arrays with the literal array syntax as a best practice. 
+    let myLiteralArray = [];
+    //Push items onto an array by specifying the index
+    myLiteralArray[0] = "EARTH!";
+    // The array length does not need to be predefined. You can add elements down the line with blank spaces in between
+    // If we add the fifth element, like so:
+    myLiteralArray[4] = "The spiritual Self!";
+    // Then the 2nd, 3rd, and 4th elements are undefined.
+    console.log("\tWe added elements at indices 0 and 4, what about 1,2, & 3?", myLiteralArray);
+    // They should show as empty items! Specifically, like any other declared but not yet assigned variable, the value is 
+    // undefined.
+    console.log("\tYou for real undefined at index 1, array?", ( !myLiteralArray[1] ? "Yup" : "Nope" ), myLiteralArray[1]);
+    // Arrays also have some helpful built in methods.
+    console.log(
+        "\tThe .push(value) method will push the defined value on the end of the array and return the new length, which is: ",
+        myLiteralArray.push("Index 5!!")
+    );
+    console.log("\tThe .pop() method will remove the last index of the array and return the value. Our last value is: ",
+        myLiteralArray.pop()
+    );
+    console.log(
+        "\tThe .pop() method does change the array. Index 5!! has now been removed, and the array length is now ",
+        myLiteralArray.length
+    );
+    // Leaving undefined indices in an array can be confusing and should be avoided. 
+    // Just because Javascript allows something doesnt mean its a good practice.
+    // So let's fill in our JS array's undefined fields with a familiar for loop
+    for (let i = 0; i < myLiteralArray.length; i++) {
+        if (myLiteralArray[i] == undefined) {
+            console.log("\t\tCaught an undefined! Adding a plceholder string!");
+            myLiteralArray[i] = "Placeholder String";
+        } else {
+            console.log(`\t\t${myLiteralArray[i]} isn't undefined!`);
+        }
+    }
+    // There is another way to loop through arrays, and that uses the built in method forEach(callBack)
+    // The forEach method loops through the array and performs a callback function on each element. (More on callbacks in the functions section
+
+    console.log("\n\tOur array no longer has undefined middle indices\n", myLiteralArray);
+    console.log("\tWe can use the forEach to read each value, like so");
+    myLiteralArray.forEach((value, index) => {
+        //value is the current value at each pass in the loop, starting with index 0 and ending with index length-1.
+        console.warn(`\t\tindex ${index} has the value ${value}`);
+    });
+
+    console.log("\tThe forEach method is similar to the for loop, and the example above is functionally similar to:",
+    "\n\t\tfor(let index = 0; index < myLiteralArray.length; index++) {",
+        "\n\t\t\tlet value = myLiteralArray[index];",
+        "\n\t\t\tconsole.warn(`\\t\\tindex ${index} has the value ${value}`);",
+    "\n\t\t}"
+    );
+    
+
+
+
+    //Objects
+    // Control structures
+    
+    //Functions
