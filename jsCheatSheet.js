@@ -1,5 +1,5 @@
 console.log(">>>>>>> VAR LET & CONST")
-    // Declare varaibles with var or let. Prefer let over var
+    // Declare variables with var or let. Prefer let over var
     var myVar;
     let myLet;
     // Variables are undefined if declared but not yet assigned a value.
@@ -18,7 +18,7 @@ console.log(">>>>>>> VAR LET & CONST")
 // Declaring a constant without an assignment will cause an error. 
 // Specifically, this error:
 // SyntaxError: Missing initializer in const declaration
-// Beacuse this is a syntax error, even a try catch block will not manage it. 
+// Because this is a syntax error, even a try catch block will not manage it. 
 // The error will be thrown and execution of your code will halt.
 
 //Constants are not immutable, they can be altered. 
@@ -55,9 +55,9 @@ console.log("\tValue of myConstant\t", myConstant); // outputs { newObjectField:
         fieldThatExists: "I'm Defined!"
     };
     console.log("\tDefined object field\t", myObject.fieldThatExists); //Outputs 'I'm Defined!'
-    console.log("\tUndefined object field\t", myObject.fieldThatDoesNotExists); //Outputs 'undefined'
+    console.log("\tUndefined object field\t", myObject.fieldThatDoesNotExist); //Outputs 'undefined'
 
-    // Funtions with no return value;
+    // Functions with no return value;
     function myFunction() {
         //This function does nothing;
     }
@@ -319,11 +319,6 @@ console.log("\n>>>>>>> Strings and string operations");
         "\n\t\t\tconsole.warn(`\\t\\tindex ${index} has the value ${value}`);",
     "\n\t\t}"
     );
-    
-
-
-
     //Objects
     // Control structures
-    
     //Functions
