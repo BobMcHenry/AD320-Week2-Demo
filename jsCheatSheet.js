@@ -303,7 +303,8 @@ console.log("\n>>>>>>> Strings and string operations");
         }
     }
     // There is another way to loop through arrays, and that uses the built in method forEach(callBack)
-    // The forEach method loops through the array and performs a callback function on each element. (More on callbacks in the functions section
+    // The forEach method loops through the array and performs a callback function on each element. 
+    // (More on callbacks in the functions section)
 
     console.log("\n\tOur array no longer has undefined middle indices\n", myLiteralArray);
     console.log("\tWe can use the forEach to read each value, like so");
